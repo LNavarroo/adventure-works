@@ -1,0 +1,11 @@
+sources:
+  - name: salesforce
+    description: Sistema SalesForce
+    schema: RAW_ADVENTURE_WORKS
+    database: fea24_11
+    tables:
+      - name: SALESORDERDETAIL
+      - name: SALESORDERHEADER
+      - name: SALESREASON
+      - name: CREDITCARD
+      
