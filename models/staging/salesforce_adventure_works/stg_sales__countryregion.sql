@@ -8,9 +8,7 @@ with
         select
             cast (COUNTRYREGIONCODE as string) as pk_country
             ,cast (NAME as string) as name_country
-
-
-
+            
         from  fonte_countryregion
     )
 
