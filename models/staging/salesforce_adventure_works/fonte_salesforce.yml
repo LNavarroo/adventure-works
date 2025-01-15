@@ -10,7 +10,7 @@ sources:
       - name: CREDITCARD
       - name: SALESPERSON
       - name: SALESORDERHEADERSALESREASON
-      - name: ADRESS
+      - name: ADDRESS
       - name: STATEPROVINCE
       - name: COUNTRYREGION
       - name: PERSON
