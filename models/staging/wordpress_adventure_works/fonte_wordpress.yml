@@ -1,0 +1,9 @@
+sources:
+  - name: wordpress
+    description: WebSite
+    schema: RAW_ADVENTURE_WORKS
+    database: fea24_11
+    tables:
+      - name: STORE
+      - name: CUSTOMER
+      - name: SALESTERRITORY
