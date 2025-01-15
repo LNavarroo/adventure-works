@@ -8,4 +8,10 @@ sources:
       - name: SALESORDERHEADER
       - name: SALESREASON
       - name: CREDITCARD
+      - name: SALESPERSON
+      - name: SALESORDERHEADERSALESREASON
+      - name: ADRESS
+      - name: STATEPROVINCE
+      - name: COUNTRYREGION
+      - name: PERSON
       

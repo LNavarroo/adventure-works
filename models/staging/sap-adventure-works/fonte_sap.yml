@@ -1,0 +1,10 @@
+sources:
+  - name: sap-erp
+    description: Sistema SAP
+    schema: RAW_ADVENTURE_WORKS
+    database: fea24_11
+    tables:
+      - name: EMPLOYEE
+      - name: PRODUCT
+      - name: PRODUCTCATEGORY
+      - name: PRODUCTSUBCATEGORY
