@@ -13,11 +13,11 @@ with
             , cast(CREDITCARDID as int) as fk_creditcard
             , cast(ORDERDATE as date) as orderdate_salesorder
             , cast(SHIPDATE as date) as shipdate_salesorder
-            , cast(ONLINEORDERFLAG as string) as onlineflag_salesorder
-            , cast(SUBTOTAL as float) as subtotal_salesorder
-            , cast(TAXAMT as float) as tax_salesorder
-            , cast(FREIGHT as float) as freigth_salesorder
-            , cast(TOTALDUE as float) as total_salesorder
+            , cast(ONLINEORDERFLAG as string) as is_online_salesorder
+            , cast(SUBTOTAL as numeric(18,4)) as subtotal_salesorder
+            , cast(TAXAMT as numeric(18,4)) as tax_salesorder
+            , cast(FREIGHT as numeric(18,4)) as freigth_salesorder
+            , cast(TOTALDUE as numeric(18,4)) as total_salesorder
         from fonte_salesorderheader
     )
 
