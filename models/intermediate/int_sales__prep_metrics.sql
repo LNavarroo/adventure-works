@@ -41,6 +41,15 @@
             ,salesorderheader.FREIGTH_SALESORDER 
             ,salesorderheader.SUBTOTAL_SALESORDER 
             ,salesorderheader.TOTAL_SALESORDER 
+            ,cast(COUNT(fk_product) over(partition by fk_product) as int) as qty_unic_product
+            ,cast(COUNT(fk_product) over(partition by fk_product) as int)* UNITPRICE_SALESORDERDETAIL as gross_sale
+            ,CAST((
+                     (COUNT(fk_product) OVER (PARTITION BY fk_product)) * UNITPRICE_SALESORDERDETAIL*(1 - DISCOUNT_SALESORDERDETAIL)
+                    ) / 
+                    (COUNT(fk_product) OVER (PARTITION BY fk_product)) 
+                        AS numeric(18,2)) AS medium_ticket
+            
+            
         
         from salesorderdetail
         left join salesorderheader on salesorderdetail.FK_SALESORDER = salesorderheader.pk_salesorder
@@ -49,28 +58,8 @@
         
     )
 
-    , metrics as (
-            select
-            PK_SALESORDERDETAIL
-            ,FK_PRODUCT
-            ,FK_ADRESS
-            ,FK_SALESPERSON
-            ,FK_CUSTOMER
-            ,FK_CREDITCARD
-            ,ORDERDATE_SALESORDER as orderdate
-            ,SHIPDATE_SALESORDER as shipdate
-            ,NAME_SALESREASON as reason
-            ,TYPE_SALESREASON reasontype
-            ,IS_ONLINE_SALESORDER as is_online
-            ,QTY_SALESORDERDETAIL as quantity
-            ,UNITPRICE_SALESORDERDETAIL as unitprice
-            ,DISCOUNT_SALESORDERDETAIL as discount
-            ,TAX_SALESORDER tax
-            ,FREIGTH_SALESORDER as freigth
-            ,SUBTOTAL_SALESORDER as subtotal
-            ,TOTAL_SALESORDER as total
-
-        from prep_salesmetrics
-    )
-
-    select * from metrics
+  
+    select * from prep_salesmetrics order by pk_salesorderdetail
+     
+   
+  
