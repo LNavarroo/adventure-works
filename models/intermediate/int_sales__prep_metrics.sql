@@ -23,7 +23,7 @@
 
      , prep_salesmetrics as (
         select
-            salesorderdetail.PK_SALESORDERDETAIL
+            salesorderheader.pk_salesorder
             ,salesorderdetail.FK_PRODUCT
             ,salesorderheader.FK_ADRESS
             ,salesorderheader.FK_SALESPERSON
@@ -41,6 +41,8 @@
             ,salesorderheader.FREIGTH_SALESORDER 
             ,salesorderheader.SUBTOTAL_SALESORDER 
             ,salesorderheader.TOTAL_SALESORDER 
+            ,UNITPRICE_SALESORDERDETAIL*QTY_SALESORDERDETAIL as gross_amount_negotiated
+            ,((UNITPRICE_SALESORDERDETAIL*QTY_SALESORDERDETAIL)-(1-DISCOUNT_SALESORDERDETAIL)) as net_traded_value
             ,cast(COUNT(fk_product) over(partition by fk_product) as int) as qty_unic_product
             ,cast(COUNT(fk_product) over(partition by fk_product) as int)* UNITPRICE_SALESORDERDETAIL as gross_sale
             ,CAST((
@@ -51,15 +53,15 @@
             
             
         
-        from salesorderdetail
-        left join salesorderheader on salesorderdetail.FK_SALESORDER = salesorderheader.pk_salesorder
+        from salesorderheader
+        left join salesorderdetail on salesorderheader.pk_salesorder =salesorderdetail.fk_salesorder
         left join salesorderheadersalesreason on salesorderheader.pk_salesorder = salesorderheadersalesreason.fk_salesorder
         left join salesreason on salesorderheadersalesreason.fk_salereason = salesreason.pk_salesreason
         
     )
 
   
-    select * from prep_salesmetrics order by pk_salesorderdetail
+    select * from prep_salesmetrics order by fk_product
      
    
   
