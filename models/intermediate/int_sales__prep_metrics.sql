@@ -23,7 +23,7 @@
 
      , prep_salesmetrics as (
         select
-            salesorderheader.pk_salesorder
+            concat(salesorderheader.pk_salesorder, '-', salesorderdetail.pk_salesorderdetail) as pk_fact
             ,salesorderdetail.FK_PRODUCT
             ,salesorderheader.FK_ADRESS
             ,salesorderheader.FK_SALESPERSON
@@ -31,6 +31,7 @@
             ,salesorderheader.FK_CREDITCARD
             ,salesorderheader.ORDERDATE_SALESORDER 
             ,salesorderheader.SHIPDATE_SALESORDER 
+            ,salesorderheader.STATUS_SALESORDER
             ,salesreason.NAME_SALESREASON 
             ,salesreason.TYPE_SALESREASON 
             ,salesorderheader.IS_ONLINE_SALESORDER 
@@ -53,15 +54,15 @@
             
             
         
-        from salesorderheader
-        left join salesorderdetail on salesorderheader.pk_salesorder =salesorderdetail.fk_salesorder
+        from salesorderdetail
+        left join salesorderheader on salesorderdetail.fk_salesorder = salesorderheader.pk_salesorder
         left join salesorderheadersalesreason on salesorderheader.pk_salesorder = salesorderheadersalesreason.fk_salesorder
         left join salesreason on salesorderheadersalesreason.fk_salereason = salesreason.pk_salesreason
         
     )
 
   
-    select * from prep_salesmetrics order by fk_product
+    select * from prep_salesmetrics order by pk_fact
      
    
   
