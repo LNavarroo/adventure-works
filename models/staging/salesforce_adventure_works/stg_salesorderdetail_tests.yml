@@ -1,0 +1,9 @@
+models:
+  - name: stg_sales__salesorderdetail
+    description: PARA PREENCHER.
+    columns:
+      - name:  pk_salesorderdetail
+        description: primary key.
+        data_tests:
+          - unique
+          - not_null

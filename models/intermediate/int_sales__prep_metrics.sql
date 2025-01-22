@@ -23,7 +23,7 @@
 
      , prep_salesmetrics as (
         select
-            concat(salesorderheader.pk_salesorder, '-', salesorderdetail.pk_salesorderdetail) as pk_fact
+            salesorderdetail.pk_salesorderdetail as pk_fact
             ,salesorderdetail.FK_PRODUCT
             ,salesorderheader.FK_ADRESS
             ,salesorderheader.FK_SALESPERSON
