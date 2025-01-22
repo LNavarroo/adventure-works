@@ -19,4 +19,4 @@ with
         left join person on customer.fk_person = person.pk_person
     )
 
-    select * from prep_customer
+    select * from prep_customer 

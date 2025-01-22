@@ -1,0 +1,8 @@
+models:
+  - name: int_sales__prep_metrics
+    description: PARA PREENCHER.
+    columns:
+      - name: pk_fact
+        description: primary key.
+        data_tests:
+          - not_null
