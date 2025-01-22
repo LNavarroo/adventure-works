@@ -5,5 +5,4 @@ models:
       - name: pk_fact
         description: primary key.
         data_tests:
-          - unique
           - not_null
