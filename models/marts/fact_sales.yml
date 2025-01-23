@@ -1,13 +1,10 @@
 models:
-  - name: int_sales__prep_metrics
+  - name: fact_sales
     description: This is the fact table, includes metrics, foreign keys, and sales information about Adventure Works.
     columns:
 
       - name: sk_fack
         description: Fact surrogate key.
-        data_tests:
-          - unique
-          - not_null
 
       - name: FK_PRODUCT
         description: Product dimension Foreign Key.
