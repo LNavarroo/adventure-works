@@ -1,0 +1,79 @@
+models:
+  - name: int_sales__prep_metrics
+    description: This is the fact table, includes metrics, foreign keys, and sales information about Adventure Works.
+    columns:
+
+      - name: sk_fack
+        description: Fact surrogate key.
+        data_tests:
+          - unique
+          - not_null
+
+      - name: FK_PRODUCT
+        description: Product dimension Foreign Key.
+
+      - name: FK_ADRESS
+        description: Adress dimension Foreign Key.
+      
+      - name: FK_SALESPERSON
+        description: Salesperson dimension Foreign Key.
+      
+      - name: FK_CUSTOMER
+        description: Customer dimension Foreign Key.
+      
+      - name: FK_CREDITCARD
+        description: Credit card dimension Foreign Key.
+      
+      - name: ORDERDATE_SALESORDER 
+        description: Date of the order.
+      
+      - name: SHIPDATE_SALESORDER 
+        description: Date when order was shipped.
+      
+      - name: STATUS_SALESORDER
+        description: Status of the order.
+      
+      - name: NAME_SALESREASON 
+        description: Name of reason for purchase.
+        
+      - name: TYPE_SALESREASON 
+        description: Type of reason for purchase.
+
+      - name: IS_ONLINE_SALESORDER 
+        description: Flag if is a online order or not.
+
+      - name: QTY_SALESORDERDETAIL 
+        description: Quantity of products purchased.
+
+      - name: UNITPRICE_SALESORDERDETAIL 
+        description: Unit price of a product.
+      
+      - name: DISCOUNT_SALESORDERDETAIL 
+        description: Discount applied.
+      
+      - name: TAX_SALESORDER 
+        description: Tax of the order.
+      
+      - name: FREIGTH_SALESORDER 
+        description: Freight of the order.
+      
+      - name: SUBTOTAL_SALESORDER 
+        description: Sum of gross sale and tax and freigth.
+      
+      - name: TOTAL_SALESORDER 
+        description: Total of the order with discount apllied.
+      
+      - name: gross_amount_negotiated
+        description: Total gross sales.
+      
+      - name: net_traded_value
+        description: Net total sales.
+
+      - name:  qty_unic_product
+        description: Quantity total purchased of a product.
+
+      - name: gross_sale
+        description: Gross sale per product.
+
+      - name:  medium_ticket
+        description: Medium ticket per product.

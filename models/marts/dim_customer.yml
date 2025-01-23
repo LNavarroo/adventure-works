@@ -1,0 +1,14 @@
+models:
+  - name: dim_customer
+    description: This is the customer dimension, includes the name of customers of Adventure Works.
+    columns:
+      - name: PK_CUSTOMER
+        description: Customer primary key.
+        data_tests:
+          - unique
+          - not_null
+
+      - name: FULL_NAME_PERSON
+        description: Full name of the customer.
+
+  
