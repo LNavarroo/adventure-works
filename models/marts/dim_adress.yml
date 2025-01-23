@@ -1,0 +1,18 @@
+models:
+  - name: dim_adress
+    description: This is the adress dimension, includes adress,cities,states,countries about customers and sales of Adventure Works.
+    columns:
+      - name: PK_ADRESS
+        description: primary key.
+        data_tests:
+          - unique
+          - not_null
+
+      - name: CITY
+        description: City name.
+
+      - name: NAME_STATE
+        description: State name.  
+
+      - name: NAME_COUNTRY
+        description: Country name.  

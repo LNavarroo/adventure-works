@@ -5,6 +5,26 @@ sources:
     database: fea24_11
     tables:
       - name: EMPLOYEE
+        columns:
+          - name: BUSINESSENTITYID
+            data_tests:
+              - unique
+              - not_null
       - name: PRODUCT
+        columns:
+          - name: PRODUCTID
+            data_tests:
+              - unique
+              - not_null
       - name: PRODUCTCATEGORY
+        columns:
+          - name: PRODUCTCATEGORYID
+            data_tests:
+              - unique
+              - not_null
       - name: PRODUCTSUBCATEGORY
+        columns:
+          - name: PRODUCTSUBCATEGORYID
+            data_tests:
+              - unique
+              - not_null

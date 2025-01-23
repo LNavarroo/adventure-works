@@ -1,0 +1,14 @@
+models:
+  - name: dim_creditcard
+    description: This is the credit card dimension, includes the type of credit card used on purchases of products of Adventure Works.
+    columns:
+      - name: PK_CREDITCARD
+        description: Credit card primary key.
+        data_tests:
+          - unique
+          - not_null
+
+      - name: TYPE_CREDITCARD
+        description: Type of credit card used.
+
+    

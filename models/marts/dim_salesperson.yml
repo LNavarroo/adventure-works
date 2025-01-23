@@ -1,0 +1,18 @@
+models:
+  - name: dim_salesperson
+    description: This is the salesperson dimension, includes the name, jobtitle and gender of employees of Adventure Works.
+    columns:
+      - name: PK_SALESPERSON
+        description: Salesperson primary key.
+        data_tests:
+          - unique
+          - not_null
+
+      - name: FULL_NAME_PERSON
+        description: Full name of employee.
+
+      - name: JOBTITLE_EMPLOYEE
+        description: Jobtitle of employee.
+
+      - name: GENDER_EMPLOYEE
+        description: Gender of employee.  

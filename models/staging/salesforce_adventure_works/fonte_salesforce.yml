@@ -5,13 +5,54 @@ sources:
     database: fea24_11
     tables:
       - name: SALESORDERDETAIL
+        columns:
+          - name: salesorderdetailid
+            data_tests:
+              - unique
+              - not_null
+                
       - name: SALESORDERHEADER
+
       - name: SALESREASON
+        columns:
+          - name: salesreasonid
+            data_tests:
+              - unique
+              - not_null
       - name: CREDITCARD
+        columns:
+          - name: creditcardid
+            data_tests:
+              - unique
+              - not_null
       - name: SALESPERSON
+        columns:
+          - name: BUSINESSENTITYID
+            data_tests:
+              - unique
+              - not_null
+
       - name: SALESORDERHEADERSALESREASON
+
       - name: ADDRESS
+                  
       - name: STATEPROVINCE
+        columns:
+          - name: STATEPROVINCEID
+            data_tests:
+              - unique
+              - not_null
       - name: COUNTRYREGION
+        columns:
+          - name: COUNTRYREGIONCODE
+            data_tests:
+              - unique
+              - not_null
+
       - name: PERSON
+        columns:
+          - name: BUSINESSENTITYID
+            data_tests:
+              - unique
+              - not_null
       
