@@ -47,7 +47,6 @@
             ,UNITPRICE_SALESORDERDETAIL*QTY_SALESORDERDETAIL as gross_amount_negotiated
             ,(QTY_SALESORDERDETAIL*UNITPRICE_SALESORDERDETAIL)/count(sk_fact) over(partition by sk_fact) as soma_total_bruto
             ,((UNITPRICE_SALESORDERDETAIL*QTY_SALESORDERDETAIL)-(1-DISCOUNT_SALESORDERDETAIL)) as net_traded_value
-            ,cast(COUNT(fk_product) over(partition by fk_product) as int) as qty_unic_product
             ,cast(COUNT(fk_product) over(partition by fk_product) as int)* UNITPRICE_SALESORDERDETAIL as gross_sale
             ,CAST((
                      (COUNT(fk_product) OVER (PARTITION BY fk_product)) * UNITPRICE_SALESORDERDETAIL*(1 - DISCOUNT_SALESORDERDETAIL)
