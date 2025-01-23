@@ -4,12 +4,7 @@ sources:
     schema: RAW_ADVENTURE_WORKS
     database: fea24_11
     tables:
-      - name: STORE
-        columns:
-          - name: STOREID
-            data_tests:
-              - unique
-              - not_null
+
       - name: CUSTOMER
         columns:
           - name: CUSTOMERID
