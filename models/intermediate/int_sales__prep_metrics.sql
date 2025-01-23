@@ -24,6 +24,7 @@
      , prep_salesmetrics as (
         select
               MD5(CONCAT(salesorderheader.pk_salesorder , '-', salesorderdetail.pk_salesorderdetail)) AS sk_fact
+            ,salesorderdetail.pk_salesorderdetail as pk_fact
             ,salesorderheader.pk_salesorder  
             ,salesorderdetail.FK_PRODUCT
             ,salesorderheader.FK_ADRESS
